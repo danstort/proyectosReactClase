@@ -1,10 +1,28 @@
-import ElementoLista from "./ElementosLista";
+
+import { useEffect } from "react";
+import ElementoIndividual from "./ElementoIndividual";
 
 const DetallesLista = (props) => {
-    return (
-        <li>
-           {props}
-        </li>
+
+    useEffect(() => {
+        console.log( props);
+    }, [props]);
+    
+    function muestraDetalles(detalles) {  
+
+        return(
+            
+             <ElementoIndividual {...detalles}></ElementoIndividual>  
+        )
+      }
+
+      return (
+        <ul>
+           {props.lista.parts.map(muestraDetalles
+
+           )}
+         
+             </ul>
     );
 }
 

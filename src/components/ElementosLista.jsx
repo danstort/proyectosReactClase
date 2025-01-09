@@ -5,10 +5,10 @@ const ElementoLista = (props) => {
     return (
 
         <li>{props.lista.name}
-            <ul>
+            
 
-                <DetallesLista ></DetallesLista>
-            </ul>
+                <DetallesLista {...props}></DetallesLista>
+            
             
         </li>
 
