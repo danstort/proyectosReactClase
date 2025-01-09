@@ -1,31 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import BarraHerramientas from './components/BarraHerramientas'
-import TemaContext from './contexts/TemaContext'
-import temas from './mocks/mocks-temas'
-import Color from './components/Color'
-
-import './App.css'
+import './App.css';
+import ElementoLista from './components/ElementosLista';
+import misTemas from './mocks/mock-misTemas';
 
 function App() {
+
+
+
+  function muestraLista(lista) {
+
+    return <ElementoLista lista={lista}></ElementoLista>;
+
+  }
+
   return (
-    <div>
 
-      <TemaContext.Provider value={temas.light}>
 
-        <BarraHerramientas>
+    <ul>
 
-        </BarraHerramientas>
 
-        <Color></Color>
-        
-      </TemaContext.Provider>
+      {misTemas.map(muestraLista)}
+    </ul>
 
-      
 
-    </div>
-  )
-
+  );
 }
+export default App;
 
-export default App
+
+
+
+
