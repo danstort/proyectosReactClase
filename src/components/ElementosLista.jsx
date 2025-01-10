@@ -11,10 +11,10 @@ const ElementoLista = (props) => {
             
             <ol>
 
-                <DetallesLista props={props.lista.parts}></DetallesLista>
+                <DetallesLista key={props.id} props={props.lista.parts}></DetallesLista>
             </ol>
                 
-            <p>{totalEjercicios}</p>
+            <p>Total de ejercicios en el curso {totalEjercicios}</p>
             
         </li>
 

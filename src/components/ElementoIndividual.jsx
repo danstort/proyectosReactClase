@@ -3,7 +3,7 @@ const ElementoIndividual = (props) => {
   return (
       
     
-        <li>{props.name+""+props.exercises}</li>
+        <li><strong>{props.name}</strong>. Ejercicios:{props.exercises}</li>
         
        
   );

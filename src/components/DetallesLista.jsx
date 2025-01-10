@@ -12,7 +12,7 @@ const DetallesLista = (props) => {
 
         return(
             
-             <ElementoIndividual {...detalles}></ElementoIndividual>  
+             <ElementoIndividual key={detalles.id} {...detalles}></ElementoIndividual>  
         )
       }
 

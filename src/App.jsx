@@ -9,7 +9,7 @@ function App() {
 
   function muestraLista(lista) {
 
-    return <ElementoLista lista={lista}></ElementoLista>;
+    return <ElementoLista key={lista.id} lista={lista}></ElementoLista>;
 
   }
 
