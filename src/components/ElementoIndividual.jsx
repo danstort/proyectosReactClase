@@ -1,11 +1,11 @@
 
 const ElementoIndividual = (props) => {
   return (
-    <ol>    
-
-        <li>{props.name}</li>
-        <li>{props.exercises}</li>
-        </ol>
+      
+    
+        <li>{props.name+""+props.exercises}</li>
+        
+       
   );
 }
 

@@ -17,12 +17,13 @@ const DetallesLista = (props) => {
       }
 
       return (
-        <ul>
-           {props.lista.parts.map(muestraDetalles
+        <ol>
 
-           )}
+          {props.props.map(muestraDetalles)}
+        </ol>
+           
          
-             </ul>
+            
     );
 }
 

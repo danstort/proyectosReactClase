@@ -1,6 +1,7 @@
 import './App.css';
 import ElementoLista from './components/ElementosLista';
 import misTemas from './mocks/mock-misTemas';
+import DetallesLista from './components/DetallesLista';
 
 function App() {
 
@@ -17,8 +18,9 @@ function App() {
 
     <ul>
 
-
+      
       {misTemas.map(muestraLista)}
+      
     </ul>
 
 

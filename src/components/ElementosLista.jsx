@@ -2,13 +2,19 @@ import DetallesLista from "./DetallesLista";
 
 const ElementoLista = (props) => {
 
+
+    const totalEjercicios = props.lista.parts.reduce((total, part) => total + part.exercises, 0);
+
     return (
 
         <li>{props.lista.name}
             
+            <ol>
 
-                <DetallesLista {...props}></DetallesLista>
-            
+                <DetallesLista props={props.lista.parts}></DetallesLista>
+            </ol>
+                
+            <p>{totalEjercicios}</p>
             
         </li>
 
