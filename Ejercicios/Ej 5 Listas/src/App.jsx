@@ -1,6 +1,6 @@
 import './App.css';
-import ListaNotas from './components/ListaNotas';
-import notas from './mocks/mock-notas';
+import ElementoLista from './components/ElementosLista';
+import misTemas from './mocks/mock-misTemas';
 import DetallesLista from './components/DetallesLista';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   function muestraLista(lista) {
 
-    return <ListaNotas key={lista.id} lista={lista}></ListaNotas>;
+    return <ElementoLista key={lista.id} lista={lista}></ElementoLista>;
 
   }
 
@@ -19,7 +19,7 @@ function App() {
     <ul>
 
       
-      {notas.map(muestraLista)}
+      {misTemas.map(muestraLista)}
       
     </ul>
 
