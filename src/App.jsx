@@ -1,30 +1,41 @@
 import './App.css';
-import ListaNotas from './components/ListaNotas';
-import notas from './mocks/mock-notas';
-import DetallesLista from './components/DetallesLista';
+import Coche from './components/Coche';
+import losCoches from './mock-coches';
+import CocheForm from './components/CocheForm';
 
 function App() {
 
+  function muestraCoches(coche) {  
 
-
-  function muestraLista(lista) {
-
-    return <ListaNotas key={lista.id} lista={lista}></ListaNotas>;
-
+    return <Coche  key={coche.matricula} coche={coche}></Coche>;
+    
   }
 
   return (
+    
+    <div>
+
+       <table>
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>Matricula</th>
+          <th>Color</th>
+          <th>Puertas</th>
+        </tr>
+      </thead>
+      <tbody >
+      {losCoches.map(muestraCoches)}
+      </tbody>
+    </table>
+
+    <CocheForm></CocheForm>
 
 
-    <ul>
+    </div>
+   
 
-      
-      {notas.map(muestraLista)}
-      
-    </ul>
-
-
-  );
+    );
 }
 export default App;
 
