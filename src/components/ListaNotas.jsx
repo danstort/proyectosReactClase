@@ -1,13 +1,13 @@
-import DetallesLista from "./DetallesLista";
 
-const ElementoLista = (props) => {
+
+const ListaNotas = (props) => {
 
 
     
 
     return (
 
-        <li>{props.lista.contenido}
+        <li>{props.lista.contenido} -  {props.lista.importante ? 'Importante' : ''}
             
            
         </li> 
@@ -19,4 +19,4 @@ const ElementoLista = (props) => {
     )
 }
 
-export default ElementoLista;
+export default ListaNotas;

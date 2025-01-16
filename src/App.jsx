@@ -1,41 +1,44 @@
 import './App.css';
-import Coche from './components/Coche';
-import losCoches from './mock-coches';
-import CocheForm from './components/CocheForm';
+import ListaNotas from './components/ListaNotas';
+import notas from './mocks/mock-notas';
+import { useState } from 'react';
+
+
 
 function App() {
 
-  function muestraCoches(coche) {  
+  const [mostrarImportantes, setMostrarImportantes] = useState(false);
 
-    return <Coche  key={coche.matricula} coche={coche}></Coche>;
-    
+
+
+  function muestraLista(lista) {
+
+    return <ListaNotas key={lista.id} lista={lista}></ListaNotas>;
+
+  }
+
+  function filtrarImportantes() {
+
   }
 
   return (
-    
+
+
     <div>
 
-       <table>
-      <thead>
-        <tr>
-          <th>Modelo</th>
-          <th>Matricula</th>
-          <th>Color</th>
-          <th>Puertas</th>
-        </tr>
-      </thead>
-      <tbody >
-      {losCoches.map(muestraCoches)}
-      </tbody>
-    </table>
-
-    <CocheForm></CocheForm>
+      <h1>Notas</h1>
+      <button onClick={() => setMostrarImportantes(!mostrarImportantes)}>
+        {mostrarImportantes ? 'Mostrar todas' : 'Mostrar importantes'}
+      </button>
+      <ul>
+        {notas.map(muestraLista)}
+      </ul>
 
 
     </div>
-   
 
-    );
+
+  );
 }
 export default App;
 
