@@ -17,8 +17,11 @@ function App() {
 
   }
 
-  function filtrarImportantes() {
-
+  function filtrarImportantes(nota) {
+    if (mostrarImportantes) {
+      return nota.importante; // Filtra solo las notas importantes
+    }
+    return true; // Si no se filtran importantes, muestra todas
   }
 
   return (
@@ -31,7 +34,7 @@ function App() {
         {mostrarImportantes ? 'Mostrar todas' : 'Mostrar importantes'}
       </button>
       <ul>
-        {notas.map(muestraLista)}
+        {notas.filter(filtrarImportantes).map(muestraLista)}
       </ul>
 
 
