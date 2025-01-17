@@ -2,13 +2,22 @@ import './App.css';
 import Coche from './components/Coche';
 import losCoches from './mock-coches';
 import CocheForm from './components/CocheForm';
+import { useState } from 'react';
 
 function App() {
+
+  const [listaCoches, setListaCoches]= useState(losCoches);
 
   function muestraCoches(coche) {  
 
     return <Coche  key={coche.matricula} coche={coche}></Coche>;
     
+  }
+
+  function actualizarListaCoches(coche){
+
+    setListaCoches([...listaCoches, coche]);
+
   }
 
   return (
@@ -25,11 +34,11 @@ function App() {
         </tr>
       </thead>
       <tbody >
-      {losCoches.map(muestraCoches)}
+      {listaCoches.map(muestraCoches)}
       </tbody>
     </table>
 
-    <CocheForm></CocheForm>
+    <CocheForm actualizarListaCoches={actualizarListaCoches}></CocheForm>
 
 
     </div>

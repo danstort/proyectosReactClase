@@ -8,4 +8,20 @@ table {background-color: #2F4F4F;
   border-width: 0px;
   padding: 5px;
   color:#ff0000;
-text-align: center;}
+  text-align: center;}
+
+input {
+  font-size: 20px;
+}
+ /*Añado las clases para formatear el formulario*/
+input:focus {
+  border: 2px solid #000;
+  background: #F3F3F3;
+  }
+
+label {
+  display: block;
+  margin: .5em 0 0 0;
+  }
+#formulario{margin-left: 200px;
+  }

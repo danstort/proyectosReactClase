@@ -1,0 +1,11 @@
+/* Añado las clases para formatear la tabla*/
+table {background-color: #2F4F4F;
+  border-style: none;
+  padding: 5px;}
+  
+  th, td {background-color: #FFFFFF;
+  width: 320px;
+  border-width: 0px;
+  padding: 5px;
+  color:#ff0000;
+text-align: center;}

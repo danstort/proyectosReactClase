@@ -1,22 +1,21 @@
 import { useForm } from 'react-hook-form';
 
-
 const CocheForm = (props) => {
 
     const COCHE = {
 
-        MODELO: "modelo",
-        MATRICULA: "matricula",
-        COLOR: "color",
-        PUERTAS: "npuertas"
+        MODELO: 'modelo',
+        MATRICULA: 'matricula',
+        COLOR: 'color',
+        PUERTAS: 'npuertas'
     };
 
     const COCHEINICIAL = {
 
-        modelo: "",
-        matricula: "",
-        color: "",
-        npuertas: ""
+        MODELO: "",
+        MATRICULA: "",
+        COLOR: "",
+        npuertas: 2
     };
 
     const { register, handleSubmit, reset, formState: { errors }, watch } = useForm({ defaultValues: COCHEINICIAL })
@@ -26,8 +25,6 @@ const CocheForm = (props) => {
     const manejarFormulario = handleSubmit((nuevoCoche) => {
 
         console.log(nuevoCoche);
-
-        props.actualizarListaCoches(nuevoCoche);
 
         reset(COCHEINICIAL);
 
@@ -60,7 +57,7 @@ const CocheForm = (props) => {
                         message: "La matrícula es obligatoria"
                     },
                     pattern: {
-                        value: /^\d{4}[BCDFGHJKLMNPRSTVWXYZ]{3}$/,
+                        value: /^\\d\\d\\d\\d[BCDFGHJKLMNPRSTVWXYZ][BCDFGHJKLMNPRSTVWXYZ][BCDFGHJKLMNPRSTVWXYZ]$/,
                         message: "El formato de la matrícula no es correcto 0000-AAA"
                     }
                 })
@@ -88,9 +85,7 @@ const CocheForm = (props) => {
 
 
             <button>Añadir Coche</button>
-            <br></br>{JSON.stringify(watch())}
         </form>
-
     );
 }
 
