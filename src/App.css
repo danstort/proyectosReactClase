@@ -1,27 +1,43 @@
-/* Añado las clases para formatear la tabla*/
-table {background-color: #2F4F4F;
-  border-style: none;
-  padding: 5px;}
-  
-  th, td {background-color: #FFFFFF;
-  width: 320px;
-  border-width: 0px;
-  padding: 5px;
-  color:#ff0000;
-  text-align: center;}
-
-input {
-  font-size: 20px;
+.App {
+  text-align: center;
 }
- /*Añado las clases para formatear el formulario*/
-input:focus {
-  border: 2px solid #000;
-  background: #F3F3F3;
-  }
 
-label {
-  display: block;
-  margin: .5em 0 0 0;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
-#formulario{margin-left: 200px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#divPost {width: 48%;
+  float:left;
+         }
+#divAlbum {width: 48%;
+  float:left;         }

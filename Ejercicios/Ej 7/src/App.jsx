@@ -1,14 +1,15 @@
 import './App.css';
-import Coche from './components/Coche';
-import CocheForm from './components/CocheForm';
-import losCoches from './mock-coches';
+
 import notas from './mocks/mock-notas';
 import ListaNotas from './components/ListaNotas';
+import NotaForm from './components/NotaForm';
 import { useState } from "react";
 
 function App() {
 
   const [mostrarImportantes, setMostrarImportantes] = useState(false);
+
+  const [listaNotas, setListaNotas] = useState(notas);
 
 
 
@@ -24,19 +25,18 @@ function App() {
     }
     return true; // Si no se filtran importantes, muestra todas
   }
-  const [listaCoches, setListaCoches] = useState(losCoches);
-
   
+  function manejarAccion(nota) {
 
-  // Esta función se envía al componente hijo como prop
-  function manejarAccion(coche) {
-
-    console.log("valor componetne hijo ", coche, " lo añadimos a la lista");
 
     // Añadimos el coche a la lista de coches
     setListaCoches([...listaCoches, coche]);
 
-  }
+}
+
+  
+
+ 
   return (
     <div>
 
@@ -49,8 +49,7 @@ function App() {
         {notas.filter(filtrarImportantes).map(muestraLista)}
       </ul>
 
-      {/*Enviamos al componente hijo la función mamnejarAccion como prop*/}
-      <CocheForm manejarAccion={manejarAccion}></CocheForm>
+      <NotaForm></NotaForm>
     </div>
   );
 }
