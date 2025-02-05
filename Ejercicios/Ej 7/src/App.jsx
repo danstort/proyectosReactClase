@@ -28,9 +28,7 @@ function App() {
   
   function manejarAccion(nota) {
 
-
-    // Añadimos el coche a la lista de coches
-    setListaCoches([...listaCoches, coche]);
+    setListaNotas([...listaNotas, nota]);
 
 }
 
@@ -46,10 +44,10 @@ function App() {
         {mostrarImportantes ? 'Mostrar todas' : 'Mostrar importantes'}
       </button>
       <ul>
-        {notas.filter(filtrarImportantes).map(muestraLista)}
+        {listaNotas.filter(filtrarImportantes).map(muestraLista)}
       </ul>
 
-      <NotaForm></NotaForm>
+      <NotaForm manejarAccion={manejarAccion}></NotaForm>
     </div>
   );
 }
