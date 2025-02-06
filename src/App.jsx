@@ -1,39 +1,33 @@
 import './App.css';
-
-import rm from './mocks/mock-rm';
-import { useState } from "react";
-import Menu from './components/Menu';
-import Home from './pages/Home';
-import Bienvenido from './pages/Bienvenido';
-import { Route, Routes } from 'react-router-dom';
-import Nosotros from './pages/Nosotros';
-
+import { Route} from 'wouter';
+import Home from './paginas/Home';
+import ResultadosBusqueda from './paginas/ResultadosBusqueda';
+import Detalle from './paginas/Detalle';
+import Logo from './componentes/Logo';
 function App() {
 
-  
-
   return (
-    <div>
+    <div className="App">
+      <section className="App-content">
+      <Logo></Logo> 
+      <Route
+          component={Home}
+          path="/">
+      </Route>
 
-      <Menu>
+      <Route
+          component={ResultadosBusqueda}
+          path="/search/:keyword">
+      </Route>
 
-      </Menu>
-      <Routes>
+      <Route 
+          component={Detalle}
+          path="/gif/:id">
+      </Route>
 
-        <Route path="/" element={<Home></Home>} />
-
-        <Route path="/users/:name" element={<Bienvenido></Bienvenido>} />
-
-        <Route path="/about" element={<Nosotros></Nosotros>} />
-        
-      </Routes>
-
+      </section>
     </div>
   );
 }
+
 export default App;
-
-
-
-
-
