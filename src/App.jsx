@@ -1,59 +1,33 @@
 import './App.css';
-
-import frutas from './mocks/mock-frutas';
-import ListaFrutas from './components/ListaFrutas';
-import NotaForm from './components/NotaForm';
-import { useState } from "react";
-
+import { Route} from 'wouter';
+import Home from './paginas/Home';
+import ResultadosBusqueda from './paginas/ResultadosBusqueda';
+import Detalle from './paginas/Detalle';
+import Logo from './componentes/Logo';
 function App() {
 
-
-  const [listaFrutas, setListaFrutas] = useState(frutas); // Almaceno la lista de frutas en un estado
-
-
-
-  function muestraLista(lista, index) {
-
-    return <ListaFrutas key={index} lista={lista}></ListaFrutas>; //Utilizo commo key el index del array
-
-  }
-
-  function filtrarImportantes(nota) {
-    if (mostrarImportantes) {
-      return nota.importante; // Filtra solo las notas importantes
-    }
-    return true; // Si no se filtran importantes, muestra todas
-  }
-  
-  function manejarAccion(nota) {
-
-    setListaNotas([...listaNotas, nota]);
-
-}
-
-  
-
- 
   return (
-    <div>
+    <div className="App">
+      <section className="App-content">
+      <Logo></Logo> 
+      <Route
+          component={Home}
+          path="/">
+      </Route>
 
-      <h1>Frutas</h1>
+      <Route
+          component={ResultadosBusqueda}
+          path="/search/:keyword">
+      </Route>
 
-      {/*<button onClick={() => setMostrarImportantes(!mostrarImportantes)}>
-        {mostrarImportantes ? 'Mostrar todas' : 'Mostrar importantes'}
-      </button>*/}
-      <ol>
-        {listaFrutas.map(muestraLista)}
-        {/*listaNotas.filter(filtrarImportantes).map(muestraLista)*/}
-      </ol>
+      <Route 
+          component={Detalle}
+          path="/gif/:id">
+      </Route>
 
-      {/*<NotaForm manejarAccion={manejarAccion}></NotaForm>*/}
+      </section>
     </div>
   );
 }
+
 export default App;
-
-
-
-
-
