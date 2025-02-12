@@ -7,14 +7,20 @@ import useGifs from "../../hooks/useGifs";
 
 const ResultadosBusqueda = (props) => {
 
-    const {buscando, listaGifs} = useGifs(props.params);
+    const {buscando, listaGifs, setPage} = useGifs(props.params);
 
     //console.log(props);
+    function obtenerSiguientePagina(){
+        setPage(prevPage => prevPage + 1);
+    }
+
     return (
         <div className="Home">
             {buscando 
                 ? <AjaxLoader loader={imagenLoader}></AjaxLoader> 
                 : <ListaGifs listaGifs={listaGifs}></ListaGifs>}
+                <button className="r-botton"
+                 onClick={obtenerSiguientePagina}>Siguiente Página</button>
         </div>
     )
 }
