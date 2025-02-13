@@ -1,33 +1,58 @@
 import './App.css';
-import { Route} from 'wouter';
-import Home from './paginas/Home';
-import ResultadosBusqueda from './paginas/ResultadosBusqueda';
-import Detalle from './paginas/Detalle';
-import Logo from './componentes/Logo';
+
+import frutas from './mocks/mock-frutas';
+import ListaFrutas from './components/ListaFrutas';
+import FrutasForm from './components/FrutasForm';
+import { useState } from "react";
+
 function App() {
 
+
+  const [listaFrutas, setListaFrutas] = useState(frutas); // Almaceno la lista de frutas en un estado
+
+
+
+  function muestraLista(lista, index) {
+
+    return <ListaFrutas key={index} lista={lista}></ListaFrutas>; //Utilizo commo key el index del array
+
+  }
+
+  
+  
+  function manejarInserccion({añadir}) {
+
+    setListaFrutas([...listaFrutas, añadir]); // Agrego una nueva fruta a la lista
+
+  }
+
+  
+
+ 
   return (
-    <div className="App">
-      <section className="App-content">
-      <Logo></Logo> 
-      <Route
-          component={Home}
-          path="/">
-      </Route>
+    <div>
 
-      <Route
-          component={ResultadosBusqueda}
-          path="/search/:keyword">
-      </Route>
+      <div>
+        <h1>Frutas</h1>
 
-      <Route 
-          component={Detalle}
-          path="/gif/:id">
-      </Route>
+      <ol>
+        {listaFrutas.map(muestraLista)}
+        
+      </ol>
+      </div>
 
-      </section>
+      <div>
+        <FrutasForm manejarInserccion={manejarInserccion}></FrutasForm>
+      </div>
+      
+      
+      {/*<NotaForm manejarAccion={manejarAccion}></NotaForm>*/}
     </div>
   );
 }
-
 export default App;
+
+
+
+
+

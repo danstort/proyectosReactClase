@@ -27,7 +27,7 @@ const useGifs = ({keyword} = {keyword:null}) =>  {
         
 
         // Usamos el servicio de obtención de posts que hemos creado
-        getGifs({limite: 25, keyword: keywordAUsar, pagina: page}).then(nextGifs => {
+        getGifs({keyword: keywordAUsar, pagina: page}).then(nextGifs => {
 
             //Cargamos los post en el estado del componente
             //setListaGifs(gifs);
@@ -42,7 +42,7 @@ const useGifs = ({keyword} = {keyword:null}) =>  {
 
     // Llamamos a la función de extracción de datos con un useEffect
     // para que solo se ejecute una vez
-    useEffect(obtenerGifs, [keyword, page, setPage]);
+    useEffect(obtenerGifs, [keywordAUsar, page]);
 
     return {buscando, listaGifs, setPage}
 }
