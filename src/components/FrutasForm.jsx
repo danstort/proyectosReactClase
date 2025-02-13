@@ -29,7 +29,9 @@ const FrutasForm = (props) => {
 
 
   return (
-    <form id="formulario" onSubmit={manejarFormulario}>
+
+    <div>
+      <form id="formulario" onSubmit={manejarFormulario}>
       
       <label htmlFor={FRUTAS_ID.AÑADIR}>Escribe la fruta que quieres añadir</label>
       <input id={FRUTAS_ID.AÑADIR} type="text"
@@ -46,6 +48,29 @@ const FrutasForm = (props) => {
       <button>Añadir Nota</button>
       <br></br>{JSON.stringify(watch())}
     </form>
+
+    <form id="formulario" onSubmit={manejarFormulario}>
+      
+      <label htmlFor={FRUTAS_ID.ELIMINAR}>Escribe el número de fruta a eliminar</label>
+      <input id={FRUTAS_ID.ELIMINAR} type="text"
+        {...register(FRUTAS_ID.ELIMINAR,
+          {
+            required: {
+              value: true,
+              message: "El contenido es obligatorio"
+            }
+          })
+        }
+      /><br></br>
+
+      <button>Añadir Nota</button>
+      <br></br>{JSON.stringify(watch())}
+    </form>
+
+    </div>
+    
+
+    
   )
 }
 
