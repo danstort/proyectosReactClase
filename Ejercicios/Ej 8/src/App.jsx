@@ -2,7 +2,7 @@ import './App.css';
 
 import frutas from './mocks/mock-frutas';
 import ListaFrutas from './components/ListaFrutas';
-import NotaForm from './components/NotaForm';
+import FrutasForm from './components/FrutasForm';
 import { useState } from "react";
 
 function App() {
@@ -37,7 +37,8 @@ function App() {
   return (
     <div>
 
-      <h1>Frutas</h1>
+      <div>
+        <h1>Frutas</h1>
 
       {/*<button onClick={() => setMostrarImportantes(!mostrarImportantes)}>
         {mostrarImportantes ? 'Mostrar todas' : 'Mostrar importantes'}
@@ -46,7 +47,13 @@ function App() {
         {listaFrutas.map(muestraLista)}
         {/*listaNotas.filter(filtrarImportantes).map(muestraLista)*/}
       </ol>
+      </div>
 
+      <div>
+        <FrutasForm></FrutasForm>
+      </div>
+      
+      
       {/*<NotaForm manejarAccion={manejarAccion}></NotaForm>*/}
     </div>
   );
