@@ -4,6 +4,7 @@ import frutas from './mocks/mock-frutas';
 import ListaFrutas from './components/ListaFrutas';
 import FrutasForm from './components/FrutasForm';
 import { useState } from "react";
+import { use } from 'react';
 
 function App() {
 
@@ -26,6 +27,13 @@ function App() {
 
   }
 
+  function manejarEliminacion({eliminar}) {
+
+    setListaFrutas(listaFrutas.filter((fruta, index) => index !== parseInt(eliminar, 10)));
+    console.log("entro");
+    console.log(eliminar);
+  }// Elimino la fruta de la lista
+
   
 
  
@@ -42,7 +50,7 @@ function App() {
       </div>
 
       <div>
-        <FrutasForm manejarInserccion={manejarInserccion}></FrutasForm>
+        <FrutasForm manejarInserccion={manejarInserccion} listaFrutas={listaFrutas} manejarEliminacion={manejarEliminacion}></FrutasForm>
       </div>
       
       
